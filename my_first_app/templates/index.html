@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Lei's Homework </title>
+	</head>
+	<body>
+		Enter Python to execute:
+		<form action="/" method="post">
+			<input type="text", name="expression" />
+			<input type="submit" value="Execute" />
+		</form>
+		{% with msgs = get_flashed_messages() %}
+			{% if msgs %}
+				Results:
+				<pre>
+					{% for msg in msgs %}
+{{msg}}
+					{% endfor %}
+				</pre>
+			{% endif %}
+		{% endwith %}
+	</body>
+</html>
